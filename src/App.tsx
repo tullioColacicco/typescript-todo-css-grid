@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {ChangeEvent, FC,useState} from 'react';
+
 import './App.css';
 
-function App() {
+const App: FC=()=> {
+  const [task,setask] = useState<string>('')
+  const [location,setLoaction] = useState<string>('')
+  const [date,setDate] = useState<number>()
+
+  const handleChange= (event: ChangeEvent<HTMLInputElement>) =>{
+    setask(event.target.value)
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<div className='container'>
+  <header id="pageHeader">Header</header>
+  <div id="mainArticle">
+ <div className='nestedGrid'>
+    <div className="input-container">
+      
+      <input className="memory-input"type="text" placeholder="memory" onChange={handleChange}/>
     </div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+   
+    </div>
+  </div>
+  <nav id="mainNav">Nav</nav>
+  <div id="siteAds">Ads</div>
+  <footer id="pageFooter">Footer</footer>
+</div>
   );
 }
 

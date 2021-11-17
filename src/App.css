@@ -1,12 +1,12 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* .App-header {
+  text-align: center;
+  background-color: #61dafb;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,7 +14,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  text-align: center;
+  background-color: #61dafb;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,13 +28,94 @@
 
 .App-link {
   color: #61dafb;
+} */
+.container {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav article ads"
+    "footer footer footer";
+  grid-template-rows: 80px 1fr 70px;
+  grid-template-columns: 20% 1fr 15%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  gap: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+#outer-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
+#outer-grid > div {
+  background-color: limegreen;
+  color: white;
+  font-size: 4vw;
+  padding: 8px;
+}
+#inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+#inner-grid > div {
+  background: lightgreen;
+  padding: 8px;
+}
+/* header,
+footer,
+article,
+nav,
+div {
+ 
+  background: aqua;
+} */
+#pageHeader {
+  grid-area: header;
+  background-color: blue;
+}
+#pageFooter {
+  grid-area: footer;
+  background-color: blueviolet;
+}
+#mainArticle {
+  grid-area: article;
+  display: grid;
+  /* grid-template-columns: subgrid; */
+  /* grid-column: 1fr, 1fr !important; */
+  /* grid-template-rows: 1fr, 1fr; */
+  background-color: rgb(251, 249, 249);
+}
+.nestedGrid {
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+.input-container {
+  margin: auto;
+}
+#mainNav {
+  grid-area: nav;
+  background-color: yellowgreen;
+}
+#siteAds {
+  grid-area: ads;
+  background-color: rgb(113, 52, 255);
+}
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "article"
+      "ads"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;
+    grid-template-columns: 1fr;
   }
 }
