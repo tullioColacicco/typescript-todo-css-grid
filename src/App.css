@@ -93,7 +93,7 @@ div {
   justify-content: center;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 .input-container {
   margin: auto;
@@ -101,6 +101,38 @@ div {
 #mainNav {
   grid-area: nav;
   background-color: yellowgreen;
+}
+.tasks-Container {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.taskName-Container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 100px;
+  grid-column-gap: 5px;
+}
+.taskName {
+  display: grid;
+  color: blueviolet;
+  float: right;
+  align-content: center;
+  /* width: 50%; */
+  /* justify-content: center; */
+}
+.delete-Button {
+  display: grid;
+  align-content: center;
+  align-items: end;
+  justify-content: center;
+  height: 30%;
+  width: 20%;
+  margin-top: 40%;
+  border-radius: 2px;
+  background-color: blueviolet;
 }
 #siteAds {
   grid-area: ads;
